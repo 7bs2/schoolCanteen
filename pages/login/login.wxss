@@ -1,0 +1,73 @@
+/* pages/login/login.wxss */
+.containers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .container2{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    text-align: center;
+    bottom: 30rpx;
+
+}
+
+.container .myIcon {
+    position: relative;
+    top: -300rpx;
+    width: 350rpx;
+    height: 350rpx;
+
+    border-color: black;
+    border-width: 200rpx;
+}
+
+.container .myText {
+    position: relative;
+    top: -290rpx;
+    font-family: youYuan;
+    font-size: 35rpx;
+    font-weight: 550;
+}
+
+.container .btn1 {
+    width: 80%;
+    margin-top: -100rpx;
+    background-color: var(--themeColor);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50rpx;
+  }
+  .container .check-default{
+      margin-top: 540rpx;
+  }
+  .btn1::after {
+    border-radius: 98rpx;
+    border: 0; 
+  }
+
+  .foot {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+ .foot .wxImage {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 10rpx;
+}

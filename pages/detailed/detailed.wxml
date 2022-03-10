@@ -1,0 +1,96 @@
+<scroll-view class="page">
+    <view class="all_message">
+        <view class="goods_message">
+            <view class="shops_name"><text>民族食堂</text></view>
+            <view class="line"></view>
+            <view class="ways" style="padding-top: 15rpx; padding-bottom: 15rpx; position: relative;">
+                <text style="margin-left: 25rpx;">订单编号：</text>
+                <text style=" position: absolute; right: 0; margin-right: 20rpx;">{{order.ddbz}}</text>
+            </view>
+            <view class="line"></view>
+
+            <view class="good_detial">
+                <view wx:for="{{food}}" class="detial">
+                    <text>{{item.cpmc}}x{{item.cpsl}}</text>
+                </view>
+                <view class="broadcast">
+                    <block wx:if="{{order.ddzt == 0 || order.ddzt == 1}}">
+                        <text>待支付</text>
+                    </block>
+                    <block wx:elif="{{order.ddzt == 2}}">
+                        <text>待支付</text>
+                    </block>
+                    <block wx:elif="{{order.ddzt == 3}}">
+                        <text>待评价</text>
+                    </block>
+                    <block wx:elif="{{order.ddzt == 4}}">
+                        <text>已完成</text>
+                    </block>
+                </view>
+            </view>
+
+            <view class="line" style="margin-top: 20rpx;"></view>
+
+            <view class="ways" style="padding-top: 15rpx; padding-bottom: 15rpx; position: relative;">
+                <text style="margin-left: 25rpx;">规格：</text>
+                <text style=" position: absolute; right: 0; margin-right: 20rpx;">大份，麻辣</text>
+            </view>
+            <view class="line" style="margin-top: 10rpx;"></view>
+            <view class="red" style="padding-top: 15rpx; padding-bottom: 15rpx;">
+                <view style="margin-left: 25rpx; position: relative;">
+                    <text>优惠卷:</text>
+                    <text style="position: absolute; right: 20rpx;">{{order.yhjlb == ""?'未使用' : '1元'}}</text>
+                </view>
+            </view>
+            <view class="line" style="margin-top: 10rpx;"></view>
+
+            <view class="ways" style="padding-top: 15rpx; padding-bottom: 15rpx; position: relative;">
+                <block wx:if="{{order.qcfs == 0}}">
+                    <text style="margin-left: 25rpx;">配送地址：</text>
+                    <view class="line" style="margin-top: 10rpx;"></view>
+                    <view class="address-item">
+                        <view class="item-top">{{address.name}} {{address.mobile}}</view>
+                        <view class="item-content">{{address.city}} {{address.street}}</view>
+                    </view>
+                </block>
+                <block wx:elif="{{order.qcfs == 1 || order.qcfs == 2}}">
+                    <text style="margin-left: 25rpx;">桌号：</text>
+                    <text style=" position: absolute; right: 0; margin-right: 20rpx;">{{order.yczh}}</text>
+                </block>
+            </view>
+            <view class="all_price" style="margin-top: -20rpx; padding-bottom: 30rpx;">
+                <view class="all_price_detail">
+                    <text style="color: red;">应付：￥20</text>
+                    <text style="margin-left: 20px; color: red;">已优惠：￥10</text>
+                    <text style="margin-left: 20px; color: red;">合计：￥{{order.ddzje}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <!-- 第二大块 -->
+    <view class="two_message">
+        <view class="ways" style="padding-top: 15rpx; padding-bottom: 15rpx; position: relative;">
+            <text style="margin-left: 25rpx;">支付方式</text>
+            <text style=" position: absolute; right: 0; margin-right: 20rpx;">线上支付</text>
+        </view>
+        <view class="line" style="margin-top: 10rpx;"></view>
+
+        <view class="people_number">
+            <text>用餐人数：</text>
+            <text style=" position: absolute; right: 0; margin-right: 20rpx;">20</text>
+        </view>
+
+        <!-- <view class="red" style="padding-top: 20rpx; padding-bottom: 20rpx;">
+            <navigator style="margin-left: 25rpx;">
+                <text>地址:</text>
+                <text style="margin-left: 40rpx;">(已选桌号则不用填)</text>
+            </navigator>
+        </view> -->
+    </view>
+
+
+    <!-- 底部固定 -->
+
+</scroll-view>

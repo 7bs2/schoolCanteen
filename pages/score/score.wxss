@@ -1,0 +1,15 @@
+view text {
+    font-family: var(--themeFont);
+}
+.btn {
+    margin-top: 20rpx;
+    font-family: var(--themeFont);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+    background-color: var(--themeColor);
+    height: 60rpx;
+    width: 160rpx;
+    border-radius: 20rpx;
+}

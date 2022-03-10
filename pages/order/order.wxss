@@ -1,0 +1,171 @@
+page {
+  background: #f3f4f6;
+}
+
+.tabs .tabs_title {
+  margin-top: 10rpx;
+  display: flex;
+}
+
+.tabs .tabs_title .title_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 0 30rpx;
+  padding: 20rpx 0;
+  font-family: FangSong;
+}
+
+.active {
+  border-bottom: 5rpx solid var(--themeColor);
+}
+
+.address-none {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+
+}
+
+.none-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.none-content image {
+  margin-top: 300%;
+  width: 150rpx;
+  height: 150rpx;
+  margin-bottom: 30rpx;
+}
+
+.none-content .txt {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.content-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orders {
+  height: 100%;
+}
+
+.order {
+  padding-left: 32rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.order .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25rpx 0 0;
+  border-bottom: 1rpx solid #f4f4f4;
+  height: 110rpx;
+  font-size: 30rpx;
+  color: #555;
+  font-family: var(--themeFont);
+}
+.order .header .ima{
+  width:90rpx;
+  height: 90rpx;
+  border-radius: 8rpx
+
+}
+.good {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20rpx;
+  padding-bottom: 25rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.good text{
+  font-size: 30rpx;
+  color: #555;
+  font-family: var(--themeFont);
+  margin-left: 10rpx;
+}
+.good .detial {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.good .broadcast {
+  justify-content: center;
+  align-items: flex-end;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+ position: relative;
+ gap: 8rpx;
+}
+.good .broadcast text {
+  margin-right: 20rpx;
+}
+
+.status .tables {
+  font-size: 27rpx;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status .txt {
+  font-size: 25rpx;
+  color: var(--themeColor);
+}
+
+.order .foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 25rpx 0 0;
+  height: 88rpx;
+  font-size: 27rpx;
+  color: #555;
+}
+
+.foot .btns {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.foot .btns image {
+  margin-top: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.foot .btns .btnLook {
+  margin-top: 10rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+  border: 1rpx solid var(--themeColor);
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot .btns .btnTxt {
+  padding-right: 15rpx;
+  padding-left: 15rpx;
+  font-size: 27rpx;
+  color: var(--themeColor);
+  flex-direction: column;
+}

@@ -1,0 +1,67 @@
+<!-- <view class="seach_nav">
+  <navigator url="/pages/globalSearch/globalSearch" class="nav">
+    <image mode="widthFix" src="../../icon/search.png" class="image"></image>
+    <P>请输入搜索关键字</P>
+  </navigator>
+</view> -->
+<!-- hello world -->
+<block wx:if="{{flag}}">
+  <load></load>
+</block>
+<block wx:else>
+  <view class="container"> 
+  <swiper class="dot" autoplay="true" circular="true" interval="2000" style="border-radius: 15rpx;overflow: hidden;">
+    <block wx:for="{{noticeList}}" >
+      <swiper-item >
+        <image data-index="{{index}}" src="{{item.ntc_image_uri}}" bindtap="showNotice" />
+        <view class="bottom">
+          <text style="color:#FFFFFF;padding-left:15rpx;">{{item.ntc_title}}</text>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>   
+</view>
+
+<view class="recommend">
+  <view class="title">
+    <view class="nav"></view>
+    <p class="name">推荐菜品</p>
+  </view>
+
+  <scroll-view  class="menu" scroll-x="true">
+    <view class="item" wx:for="{{recommend_list}}" wx:key="cpbz">
+      <navigator url="../sort/sort?shops_id={{item.stbz}}&class={{item.ch_typeno}}" style="display: flex; flex-direction: column;">
+        <image mode="scaleToFill" src="{{item.uri}}"></image>
+        <text class="message">{{item.cpmc}}</text>
+        <i-rate
+            size="15"
+            disabled="{{true}}"
+            value="4">
+        </i-rate>
+      </navigator>
+    </view>
+  </scroll-view>
+</view> 
+
+
+<view class="shop_list">
+  <view class="title">
+    <view class="nav"></view>
+    <p class="name">食堂餐厅</p>
+  </view>
+
+
+  <view class="shop_nav">
+    <view class="shop_nav_item"  wx:for="{{canteenData}}" wx:key="shops_id" bindtap="toSort" data-id="{{item.shops_id}}" data-index="{{index}}">
+    <view class="footImageSize">
+      <image src="{{item.image_src}}" mode="scaleToFill"></image>
+    </view>
+      <view class="detail">
+        <text class="big_small">{{item.shops_name}}</text>
+        <text class="text_small">简介:{{item.introduce}}</text>
+      </view>
+      <image wx:if="{{item.shops_exist != '1'}}" src="../../icon/close.png" style="width: 90rpx; position: absolute; right: 15rpx;" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+</block>

@@ -1,0 +1,49 @@
+<!-- 授权用户登录 -->
+<view class="container">
+    <block wx:if="{{!hasUserInfo}}">
+        <image class="userinfo-avatar" src="/image/iconMy.png"></image>
+        <view class="userinfo">
+            <button class="mini-button" bindtap="toLogin" style="border-radius: 14rpx; width: 180rpx;height: 75rpx;margin-top: 0rpx;padding-top: 13rpx;"> 登录 </button>
+        </view>
+    </block>
+    <block wx:else>
+        <image class="userinfo-avatar" src="{{userBaseInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-name" style="font-size:large; ">{{userBaseInfo.nickName}}</text>
+    </block>
+</view>
+
+<!-- 波浪动画 -->
+<view class="header">
+    <!-- 代码 -->
+    <image class="bg_ware" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif"></image>
+</view>
+<!-- 功能 -->
+<!-- 代金券 -->
+    <view class="imgTextContainer1" bindtap="btnUseMoneyAction">
+        <image class="startImg" src="/icon/daijinquan_1.png"></image>
+        <text class="afterText">代金券</text>
+        <image class="endImg" src="/icon/into.png"></image>
+    </view>
+
+<!-- 地址 -->
+    <view class="imgTextContainer3" bindtap="toAddress">
+        <image class="startImg" src="/icon/wodedizhi.png"></image>
+        <text class="afterText">我的地址</text>
+        <image class="endImg" style="margin-left: 378rpx;" src="/icon/into.png"></image>
+    </view>
+
+<!-- 问题反馈 -->
+<!-- dialog显示 -->
+<dialog id='dialog' title='如有任何疑问' content='请加QQ：123456' cancelText='取消' confirm='55555' isShown="{{isShown}}" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent" />
+
+<view class="imgTextContainer1" bindtap="showDialog">
+    <image class="startImg" src="/icon/jinggao.png"></image>
+    <text class="afterText">问题反馈</text>
+    <image class="endImg" style="margin-left: 378rpx;" src="/icon/into.png"></image>
+</view>
+<!-- 分享 -->
+<view class="imgTextContainer3" bindtap="showShare">
+    <image class="startImg" src="/icon/fenxiang.png"></image>
+    <text class="afterText">分享</text>
+    <image class="endImg" style="margin-left: 442rpx;" src="/icon/into.png"></image>
+</view>

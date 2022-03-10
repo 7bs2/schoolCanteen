@@ -1,0 +1,135 @@
+/* pages/my/my.wxss */
+page {
+    height: 100%;
+    background-color: #f3f4f6;
+}
+
+.container {
+    background-color: var(--themeColor);
+    /* border-style: solid;
+    border-color: #f3f4f6;
+    border-width: 20rpx;  
+    border-radius: 45rpx;*/
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.colorChage {
+    background: #ececec;
+}
+
+
+
+.mini-button {
+    font-family: FangSong;
+    font-size: 40rpx;
+    margin: auto;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    margin-top: 40rpx;
+}
+
+.userinfo-name {
+    margin-top: 45rpx;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    display: flex;
+    color: white;
+    /* display: flex;
+  	align-items: center;
+  	justify-content: center; */
+}
+
+.userinfo-avatar {
+    width: 162rpx;
+    height: 162rpx;
+    border-radius: 50%;
+    margin-top: 0rpx;
+}
+
+.header {
+    margin-top: -30rpx;
+    position: relative;
+    height: 40rpx;
+    background: var(--themeColor);
+}
+
+.bg_ware {
+    position: absolute;
+    left: 0;
+    bottom: -2rpx;
+    width: 100%;
+    mix-blend-mode: screen;
+    height: 80rpx;
+}
+
+.imgTextContainer1 {
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    background-color: #fbfdff;
+    height: 8%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgTextContainer2 {
+    margin-top: 4rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    background-color: #fbfdff;
+    height: 8%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgTextContainer3 {
+    margin-top: 4rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    background-color: #fbfdff;
+    height: 8%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.startImg {
+    height: 60rpx;
+    width: 60rpx;
+    margin-left: 30rpx;
+}
+
+.afterText {
+    font-family: FangSong;
+    font-size: 35rpx;
+    margin-left: 20rpx;
+    align-items: center;
+    text-align: center;
+}
+
+.endImg {
+    height: 60rpx;
+    width: 60rpx;
+    margin-left: 410rpx;
+    margin-top: 25rpx;
+}

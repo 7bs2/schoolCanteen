@@ -1,0 +1,90 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "pages/sort/sort",
+                    "query": "shops_id=1002",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/paymentVoucher/paymentVoucher",
+                    "query": "money=200",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/localSearch/localSearch",
+                    "query": "shopid=1002",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/my/my",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/order/order",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/chooseAddress/chooseAddress",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/thridPayment/thridPayment",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/payment/payment",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/secondPayment/secondPayment",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/detail/detail",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/detail/detail",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/detailed/detailed",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

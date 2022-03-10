@@ -1,0 +1,160 @@
+.wrapper {
+    display: flex;
+    position: relative;
+    width: 677rpx;
+    height: 240rpx;
+    margin: auto;
+    filter: drop-shadow(2px 2px 3px #999);
+}
+
+.left {
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background: #58a;
+    background: radial-gradient(circle at top right, transparent 6px, #7bc4fc 0) top right, radial-gradient(circle at bottom right, transparent 6px, #7bc4fc 0) bottom right;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    color: white;
+    width: 30%;
+    border-radius: 5px 0 0 5px;
+}
+.left1{
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background: #9b9b9b;
+    background: radial-gradient(circle at top right, transparent 6px, #9b9b9b 0) top right, radial-gradient(circle at bottom right, transparent 6px, #9b9b9b 0) bottom right;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    color: white;
+    width: 30%;
+    border-radius: 5px 0 0 5px;
+}
+
+.right {
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    background: #58a;
+    background: radial-gradient(circle at top left, transparent 6px, #7bc4fc 0) top left, radial-gradient(circle at bottom left, transparent 6px, #7bc4fc 0) bottom left;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    width: 70%;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+.right1 {
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    background: #959595;
+    background: radial-gradient(circle at top left, transparent 6px, #9b9b9b 0) top left, radial-gradient(circle at bottom left, transparent 6px, #9b9b9b 0) bottom left;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    width: 70%;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+.right::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    height: 102px;
+    border-left: 2rpx dashed #fff;
+}
+
+.right1::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    height: 102px;
+    border-left: 2rpx dashed #fff;
+}
+
+
+.right-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+.left  .left-condition{
+    font-size: 30rpx;
+
+}
+.left  .rowT .leftTop{
+    font-size: 30rpx;
+    margin-left: -10%;
+    margin-top: -10%;
+    color: #ff783e;
+}
+.left  .rowT .leftMoney {
+    margin-left: 0%;
+    margin-top: 0%;
+    font-size: 55rpx;
+    color: #ff7235;
+
+}
+.left  .rowT{
+    margin-top: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+.right  .right-text .rightRequrie {
+    font-size: 40rpx;
+    margin-top: 15%;
+    
+
+}
+.right  .right-text .rightTime{
+    font-size: 25rpx;
+
+}
+
+.right-text1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+.left1  .left-condition1{
+    font-size: 30rpx;
+
+}
+.left1  .rowT1 .leftTop1{
+    font-size: 30rpx;
+    margin-left: -10%;
+    margin-top: -10%;
+    color: #ffffff;
+}
+.left1  .rowT1 .leftMoney1 {
+    margin-left: 0%;
+    margin-top: 0%;
+    font-size: 55rpx;
+    color: #ffffff;
+
+}
+.left1  .rowT1{
+    margin-top: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+.right1  .right-text1 .rightRequrie1 {
+    font-size: 40rpx;
+    margin-top: 15%;
+    
+
+}
+.right1  .right-text1 .rightTime1{
+    font-size: 25rpx;
+
+}

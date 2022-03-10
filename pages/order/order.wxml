@@ -1,0 +1,205 @@
+<!-- 未登录的界面 -->
+<view wx:if="{{!ifLogin}}">
+    <view class="address-none">
+        <view class="none-content">
+            <image src="../../icon/noOrder.png"></image>
+            <text class="txt">请先登录</text>
+        </view>
+    </view>
+</view>
+
+<!-- 登录后的界面 -->
+<view wx:else>
+    <view class="tabs">
+        <view class="tabs_title">
+            <view class="title_item {{item.isActive? 'active':''}}" wx:for="{{tabs}}" wx:key="id" bindtap="handleItem" data-index="{{index}}">
+                {{item.value}}
+            </view>
+        </view>
+    </view>
+    <!-- 正在进行页面 -->
+    <block wx:if="{{tabs[0].isActive}}">
+        <!-- 暂无进行订单 -->
+        <view wx:if="{{false}}" class="address-none">
+            <view class="none-content">
+                <image src="../../icon/noOrder.png"></image>
+                <text class="txt">暂无进行订单</text>
+            </view>
+        </view>
+        <!-- 有进行订单 -->
+        <block wx:for="{{orderList}}">
+            <block wx:if="{{item.ddzt == 0 || item.ddzt == 1 || item.ddzt == 2 || item.ddzt == 3}}">
+                <sroll-view class="orders">
+                    <view class="order">
+                        <view class="header">
+                            <block wx:if="{{item.shops_id == 1001}}">
+                                <image class="ima" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdpic.tiankong.com%2Fhk%2F68%2FQJ7102041641.jpg&refer=http%3A%2F%2Fdpic.tiankong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647100695&t=ef35961526441dc7ede92f258625dcf7"></image>
+                            </block>
+                            <block wx:elif="{{item.shops_id == 1002}}">
+                                <image class="ima" src="https://img2.baidu.com/it/u=4123181026,2071566040&fm=253&fmt=auto&app=138&f=JPEG?w=737&h=500"></image>
+                            </block>
+                            <block wx:elif="{{item.shops_id == 1003}}">
+                                <image class="ima" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170409%2Fbc871c7ce121427b9b9df4a605c06ab2_th.jpeg&refer=http%3A%2F%2Fimg.mp.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647110640&t=402f4035f23f3f7d2ffdc040e25b160b"></image>
+                            </block>
+                            <block wx:elif="{{item.shops_id == 1004}}">
+                                <image class="ima" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20181015%2Fe67e5f07e8454f2ea74fd484fa0516eb.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647110639&t=c80fb5af32410447c3411a29562e1c9c"></image>
+                            </block>
+                            <view style="margin-left: -40rpx;">{{item.shopmc}}</view>
+                            <view>订单时间：{{item.xdsj}}</view>
+                        </view>
+                        <view data-id="{{item.ddbz}}" bindtap="toDetailed">
+                            <view class="good">
+                                <view class="detial">
+                                    <view wx:for="{{foodList}}" wx:for-item="a">
+                                        <block wx:if="{{a.id == item.ddbz}}">
+                                            <view wx:for="{{a.mx}}" wx:for-item="v">
+                                                <text>{{v.cpmc}}x{{v.cpsl}}</text>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </view>
+                                <block wx:if="{{item.yczh.length != 0}}">
+                                    <view class="broadcast">
+                                        <text>{{item.yczh}}号</text>
+                                    </view>
+                                </block>
+                                <block wx:else>
+                                    <block wx:if="{{item.ddzt == 0 || item.ddzt == 1}}">
+                                        <view class="broadcast">
+                                            <text>待支付</text>
+                                        </view>
+                                    </block>
+                                    <block wx:elif="{{item.ddzt == 2}}">
+                                        <view class="broadcast">
+                                            <text>待送达</text>
+                                        </view>
+                                    </block>
+                                    <block wx:elif="{{item.ddzt == 3}}">
+                                        <view class="broadcast">
+                                            <text>待评价</text>
+                                        </view>
+                                    </block>
+
+                                </block>
+                            </view>
+                        </view>
+                        <view class="foot">
+                            <view class="money">
+                                <text>实付：￥{{item.sjzfje}}</text>
+                            </view>
+                            <view class="btns">
+                                <block wx:if="{{item.ddzt == 0 || item.ddzt == 1}}">
+                                    <view class="btnLook" bindtap="show" data-index="{{index}}" data-id="{{item.ddbz}}">
+                                        <view class="btnTxt">取消订单</view>
+                                    </view>
+                                    <view class="btnLook" bindtap="toPayment" data-id="{{item.ddbz}} " data-shop="{{item.shops_id}}">
+                                        <view class="btnTxt">去支付</view>
+                                    </view>
+                                </block>
+                                <block wx:elif="{{item.ddzt == 2}}">
+                                    <block wx:if="{{item.qcfs == 2}}">
+                                        <block wx:if="{{item.yczh.length != 0}}">
+                                            <view class="btnLook">
+                                            <view class="btnTxt">确认收货</view>
+                                        </view>
+                                        </block>
+                                        <block wx:else>
+                                            <view class="btnLook" bindtap="saoMao" data-id="{{item.ddbz}}">
+                                            <view class="btnTxt">扫码选坐</view>
+                                        </view>
+                                        </block>
+                                    </block>
+                                    <block wx:else>
+                                        <view class="btnLook">
+                                            <view class="btnTxt">确认收货</view>
+                                        </view>
+                                    </block>
+                                </block>
+                                <!-- <block wx:elif="{{item.ddzt == 3 }}">
+                                    <view class="btnLook" bindtap="saoMao" data-id="{{item.ddbz}}">
+                                        <view class="btnTxt">扫码选坐</view>
+                                    </view>
+                                </block> -->
+                                <block wx:elif="{{item.ddzt == 3}}">
+                                    <view class="btnLook" bindtap="toScore">
+                                        <view class="btnTxt">去评价</view>
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </sroll-view>
+            </block>
+        </block>
+        <dialog id='dialog' title='如有任何疑问' content='请加QQ：123456' cancelText='取消' confirm='复制群号' isShown="{{isShown}}" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent" />
+    </block>
+
+    <!-- 已经完成页面 -->
+    <block wx:if="{{tabs[1].isActive}}">
+        <block wx:for="{{orderList}}">
+            <block wx:if="{{item.ddzt == 4}}">
+                <sroll-view class="orders">
+                    <view class="order">
+                        <view class="header">
+                            <image class="ima" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdpic.tiankong.com%2Fhk%2F68%2FQJ7102041641.jpg&refer=http%3A%2F%2Fdpic.tiankong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647100695&t=ef35961526441dc7ede92f258625dcf7"></image>
+                            <view style="margin-left: -40rpx;">{{item.shopmc}}</view>
+                            <view>订单时间:{{item.xdsj}}</view>
+
+                        </view>
+
+                        <navigator url="../detailed/detailed">
+                        </navigator>
+                        <view class="good">
+                            <view class="detial">
+                                <view wx:for="{{foodList}}" wx:for-item="a">
+                                    <block wx:if="{{a.id == item.ddbz}}">
+                                        <view wx:for="{{a.mx}}" wx:for-item="v">
+                                            <text>{{v.cpmc}}x{{v.cpsl}}</text>
+                                        </view>
+                                    </block>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="foot">
+                            <view class="money">
+                                <text>实付：￥{{item.sjzfje}}元</text>
+                            </view>
+                            <block wx:if="{{!hasStar}}">
+                                <view class="btns">
+                                    <view class="btnLook">
+                                        <view class="btnTxt">已完成</view>
+                                    </view>
+                                </view>
+                            </block>
+                            <block wx:else>
+                                <view class="btns">
+                                    <view class="btnLook">
+                                        <view class="btnTxt">评分：{{hasStar}}分</view>
+                                    </view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+
+                </sroll-view>
+            </block>
+        </block>
+
+    </block>
+    <view wx:if="{{false}}" class="weui-primary-loading content-center"></view>
+</view>
+
+<block wx:if="{{ifShow}}">
+    <view class="weui-mask">
+    </view>
+    <view class="weui-dialog">
+        <view class="weui-dialog__hd">
+            <view class="weui-dialog__bd">取消订单后无法恢复，是否取消订单</view>
+        </view>
+        <view class="weui-dialog__ft">
+            <view class="weui-dialog__btn weui-dialog__btn_primary" bindtap="cancel" role="button" data-type="0">取消</view>
+            <view class="weui-dialog__btn weui-dialog__btn_primary" bindtap="cancel" role="button" data-type="1">确认</view>
+        </view>
+
+    </view>
+</block>

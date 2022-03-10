@@ -1,0 +1,41 @@
+<!--pages/address/edit.wxml-->
+<!-- 地址创建和编辑页面 -->
+<view class="weui-cells content">
+    <view class="weui-cell">
+        <view class="weui-label label-txt">姓名</view>
+        <view class="weui-cell_bd">
+            <input class="weui-input input-txt" placeholder-class="input-placeholder" placeholder="收货人姓名" value="{{address.name}}" bindinput="inputName" />
+        </view>
+    </view>
+    <view class="weui-cell">
+        <view class="weui-label label-txt">手机号</view>
+        <view class="weui-cell_bd">
+            <input class="weui-input input-txt" placeholder-class="input-placeholder" placeholder="收货人手机" value="{{address.mobile}}" bindinput="inputMobile" />
+        </view>
+    </view>
+    <view class="weui-cell">
+        <view class="weui-label label-txt">所在地址</view>
+        <view class="weui-cell_bd">
+            <picker mode="region" bindchange="bindRegionChange">
+                <view class="{{address.city.length>0 ? '' : 'input-placeholder'}}" style="font-size: 24rpx;">{{address.city.length>0 ? address.city : '选择收货地址'}}</view>
+            </picker>
+        </view>
+        <view class="weui-cell_ft" bindtap="clickLocation">
+            <image src="../../icon/wodedizhi.png" style="width: 36rpx;height: 36rpx;display: flex; align-items: flex-end;flex: 1;"></image>
+        </view>
+    </view>
+    <view class="weui-cell">
+        <view class="weui-label label-txt">详细地址</view>
+        <view class="weui-cell_bd input-txt">
+            <input class="weui-input input-txt" placeholder-class="input-placeholder" placeholder="需要具体到街道、门牌号" value="{{address.street}}" bindinput="inputStreet" />
+        </view>
+    </view>
+</view>
+<view class="check-default" bindtap="clickDefault" data-index="{{index}}">
+    <icon type="{{address.isDefault?'success' : 'circle'}}" size="16"></icon>
+    设为默认地址
+</view>
+<view class="add-address" bindtap="clickAdd">
+    <view class="txt">保存</view>
+</view>
+

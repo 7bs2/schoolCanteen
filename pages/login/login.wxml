@@ -1,0 +1,31 @@
+<!--pages/login/login.wxml-->
+<view class="containers">
+<view class="container" style="position: relative;top: 500rpx;">
+    <image class="myIcon" src="http://61.189.160.73:50080/logo.png"></image>
+    <button class="btn1" bindtap="getUserProfile">
+        微信登录
+    </button>
+</view>
+<view class="container2">
+    <view class="check-default" style="color: #ababab;" bindtap="clickDefault">
+        <icon type="{{ifYes?'success':'circle'}}" size="16"></icon>
+    </view>
+    <text style="color: #ababab;">登录代表您已同意</text>
+    <text style="color: var(--themeColor);" bindtap="toAgreement">西荣智慧餐厅相关协议</text>
+</view>
+</view>
+
+<block wx:if="{{afterUserInfo}}">
+    <view class="weui-mask"></view>
+    <view class="weui-dialog">
+        <view class="weui-dialog__bd">
+            请先绑定手机号
+        </view>
+        <view class="weui-dialog_ft foot">
+            <image class="wxImage" src="../../icon/wx.png"></image>
+            <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" hover-class="colorChage" class="weui-dialog__btn weui-dialog__btn_primary" style="width: auto; background-color: #ffffff;">
+                微信用户一键绑定</button>
+        </view>
+
+    </view>
+</block>

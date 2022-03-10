@@ -1,0 +1,32 @@
+<view class="wrapper" wx:for="{{voucherList}}">
+    <block wx:if="{{!item.ifUse}}">
+        <view class="left">
+            <view class="rowT">
+                <text class="leftTop">￥</text>
+                <text class="leftMoney">{{item.money}}</text>
+            </view>
+            <text class="left-condition"> 满{{item.user_condition}}元使用</text>
+        </view>
+        <view class="right">
+            <view class="right-text">
+                <text class="rightRequrie">{{item.title}}</text>
+                <text class="rightTime">{{item.begin_time}}-{{item.end_time}}</text>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="left1">
+            <view class="rowT1">
+                <text class="leftTop1">￥</text>
+                <text class="leftMoney1">{{item.money}}</text>
+            </view>
+            <text class="left-condition1"> 满{{item.user_condition}}元使用</text>
+        </view>
+        <view class="right1">
+            <view class="right-text1">
+                <text class="rightRequrie1">{{item.title}}</text>
+                <text class="rightTime1">{{item.begin_time}}-{{item.end_time}}</text>
+            </view>
+        </view>
+    </block>
+</view>

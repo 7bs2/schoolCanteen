@@ -1,0 +1,19 @@
+<view style="position: relative;top: 500rpx;">
+<view style="font-size: 40rpx; display: flex; justify-content: center; color: var(--secondColor);">为您所选的菜品评分!!!</view>
+
+<!-- 评分 -->
+<view style="display: flex; flex-direction: row; align-items: center; justify-content: center; margin-top: 30rpx;">
+      <image 
+      wx:for="{{stars}}" 
+      wx:key="id"  
+      src="{{item.src}}" 
+      data-clickIndex="{{item.id}}"  
+      bindtap="rating"  
+      style="width:100rpx;height:100rpx;vertical-align: middle;" /> {{starNum}}分 
+  </view>
+
+  <view style="display: flex; flex-direction: row; justify-content: center;">
+    <view class="btn" bindtap="backToOrder">提交</view>
+  </view>
+</view>
+

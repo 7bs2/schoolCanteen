@@ -1,0 +1,103 @@
+text {
+    font-family: var(--themeFont);
+}
+.page {
+    background-color: #f4f4f4; 
+    height: 100vh;
+}
+
+.all_message {
+    border-radius: 15rpx;
+   margin-left: 20rpx;
+   margin-right: 20rpx;
+   margin-top: 40rpx;
+    background-color: #ffffff;
+
+}
+.line {
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    height: 2px;
+    background-color: #ededed;
+}
+.goods_message .shops_name {
+    padding: 0 25rpx;
+    color: #333333;
+    font-family: var(--themeFont);
+    font-size: 20px;
+}
+
+
+.good_detial {
+    margin-top: 25rpx;
+    display: flex;
+    flex-direction: row;
+    margin-left: 25rpx;
+}
+.good_detial .detial {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .good_detial .broadcast {
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+   position: relative;
+   gap: 8rpx;
+  }
+  .good_detial .broadcast text {
+    margin-right: 20rpx;
+    border-bottom: cadetblue 1rpx solid;
+  }
+.all_price .all_price_detail {
+    margin-left: 25rpx;
+}
+
+.two_message {
+    border-radius: 15rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+    background-color: #ffffff;
+}
+
+.people_number {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15rpx; 
+    padding-bottom: 15rpx; 
+    position: relative;
+}
+.people_number text {
+    margin-left: 25rpx;
+}
+.people_number input {
+    width: 100rpx;
+    position: absolute;
+    right: 0;
+    margin-right: 20rpx;
+    border-bottom: black 1rpx solid;
+}
+.address-item{
+    display: flex;
+    flex-direction: column;
+    margin: 6rpx 20rpx;
+    padding: 20rpx 10rpx 20rpx 8rpx;
+    border-radius: 10rpx;
+    background: #fff;
+  }
+.item-top{
+    font-size: 32rpx;
+    color: rgb(49, 49, 49); 
+  }
+  
+  .item-content{
+    font-size: 28rpx;
+    color: rgb(71, 71, 71);
+    padding-bottom: 20rpx;
+    margin-bottom: 20rpx;
+    border-bottom: 1rpx solid #dcdcdc;
+  }

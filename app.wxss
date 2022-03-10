@@ -1,0 +1,15 @@
+/**app.wxss**/
+@import "weui.wxss";
+page, view, text, swiper, swiper-item, image, navigation {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+page{
+  /* 主题色 */
+  --themeColor:#058cf1;
+  /* 主题字体 */
+  --themeFont:FangSong;
+  --secondColor:#767676;
+}

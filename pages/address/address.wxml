@@ -1,0 +1,49 @@
+<!-- 当前没有地址布局 -->
+<view wx:if="{{!addressList}}" class="address-none">
+    <view class="none-content">
+        <image src="../../image/none-address.png"></image>
+        <text class="txt">请添加收货地址</text>
+    </view>
+</view>
+
+<!-- 地址列表 -->
+<view wx:else class="address-list">
+    <view class="address-item" wx:key="index" wx:for="{{addressList}}">
+        <view class="item-top">{{item.name}} {{item.mobile}}</view>
+        <view class="item-content">{{item.city}} {{item.street}}</view>
+        <view class="item-bottom">
+            <view class="left" bindtap="clickDefault" data-id="{{item.id}}" data-index="{{index}}">
+                <icon type="{{item.isDefault?'success' : 'circle'}}" size="16"></icon>
+                设为默认地址
+            </view>
+            <view class="right">
+                <view class="txt" bindtap="ifDelete" data-id="{{item.id}}" data-index="{{index}}">删除</view>
+                <view class="txt" bindtap="clickEdit" data-id="{{item.id}}" data-index="{{index}}">编辑</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<!-- 添加地址 -->
+<view class="add-address" bindtap="clickAdd">
+    <view class="txt">添加收货地址</view>
+</view>
+
+
+
+<!-- 确认删除地址 -->
+<block wx:if="{{showIf}}">
+    <view class="weui-mask">
+    </view>
+    <view class="weui-dialog">
+        <view class="weui-dialog__hd">
+            <view class="weui-dialog__bd">地址删除后无法恢复，是否删除地址</view>
+        </view>
+        <view class="weui-dialog__ft">
+            <view class="weui-dialog__btn weui-dialog__btn_primary" bindtap="clickDelete" role="button" data-type="0">取消</view>
+            <view class="weui-dialog__btn weui-dialog__btn_primary" bindtap="clickDelete" role="button" data-type="1">删除</view>
+        </view>
+
+    </view>
+</block>

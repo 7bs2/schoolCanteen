@@ -1,0 +1,84 @@
+<scroll-view class="page" scroll-y="true">
+    <view class="all_message">
+    <view class="goods_message">
+        <view class="shops_name"><text>{{shop_name}}</text></view>
+        <view class="line"></view>
+        <view class="ways" style="padding-top: 15rpx; padding-bottom: 15rpx; position: relative;">
+        <text style="margin-left: 25rpx;">订单编号:</text>
+        <text style=" position: absolute; right: 0; margin-right: 20rpx;">{{order_message.ddbz}}</text>
+    </view>
+        <view class="line"></view>
+       <view class="list">
+        <view class="good_detial" wx:for="{{food_list}}" wx:key="cpmc">
+            <image mode="scaleToFill" src="{{item.src}}"></image>
+            <view class="price" >
+                <text style="margin-top: 10rpx;">{{item.cpmc}} × {{item.cpsl}}</text>
+                <text style="margin-top: 10rpx;">{{item.kwmc}}</text>
+                <text style="margin-top: 20rpx; color: red;">￥ {{item.cpdj}}</text>
+            </view> 
+        </view>
+       </view>
+        <view class="line" style="margin-top: 20rpx;"></view>
+        <!-- <view class="red" style="padding-top: 15rpx; padding-bottom: 15rpx;">
+            <navigator style="margin-left: 25rpx; position: relative;">
+                <text>优惠卷:</text>
+                <text style="position: absolute; right: 20rpx;">暂无可用</text>
+            </navigator>
+        </view>
+        <view class="line" style="margin-top: 10rpx;"></view> -->
+
+        <view bindtap="scanCode" class="ways" style="padding-top: 15rpx; padding-bottom: 15rpx; position: relative;">
+        <text style="margin-left: 25rpx;">桌号：</text>
+            <block wx:if="{{info}}"></block>
+        <text style=" position: absolute; right: 0; margin-right: 20rpx;">{{order_message.yczh}}</text>
+    </view>
+        <view class="line" style="margin-top: 10rpx;"></view>
+        <view class="ways" style="padding-top: 15rpx; padding-bottom: 15rpx; position: relative;">
+        <text style="margin-left: 25rpx;">运费：</text>
+        <text style=" position: absolute; right: 0; margin-right: 20rpx;">{{order_message.yf}}</text>
+    </view>
+        <view class="line" style="margin-top: 10rpx;"></view>
+        <view class="all_price" style="padding-top: 30rpx; padding-bottom: 30rpx;">
+            <view class="all_price_detail">
+                <text style="color: red;">应付：￥{{order_message.ddzje}}</text>
+            </view>
+        </view>
+    </view>
+   </view>
+
+
+   <!-- 第二大块 -->
+   <view class="two_message">
+    <view class="ways" style="padding-top: 15rpx; padding-bottom: 15rpx; position: relative;">
+        <text style="margin-left: 25rpx;">支付方式</text>
+        <text style=" position: absolute; right: 0; margin-right: 20rpx;">线上支付</text>
+    </view>
+    <view class="line" style="margin-top: 10rpx;"></view>
+
+    <view class="people_number">
+        <text>用餐人数：</text>
+        <block wx:if="{{ifInfo}}">
+            <text style=" position: absolute; right: 0; margin-right: 20rpx;">{{order_message.yczh}}</text>
+        </block>
+        <block wx:else>
+            <input bindinput="getNum" type="number"  maxlength="2" placeholder="1"/>
+        </block>
+    </view>
+    
+    <!-- <view class="red" style="padding-top: 20rpx; padding-bottom: 20rpx;">
+            <navigator style="margin-left: 25rpx;">
+                <text>地址:</text>
+                <text style="margin-left: 40rpx;">(已选桌号则不用填)</text>
+            </navigator>
+        </view> -->
+   </view>
+
+
+   <!-- 底部固定 -->
+   
+</scroll-view>
+<view bindtap="toPayment" class="bottom_view" style="position: fixed; bottom: 0; width: 100vw; height: 110rpx; background-color: var( --themeColor); display: flex; justify-content: center; align-items: center" >
+        <view class="button" style="margin-bottom: 10rpx;">
+            <text style="color: white;">去支付</text>
+        </view>
+   </view>

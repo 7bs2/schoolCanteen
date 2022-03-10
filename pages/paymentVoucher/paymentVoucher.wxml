@@ -1,0 +1,48 @@
+<view wx:if="{{checkList.length == 0}}"  class="address-none">
+    <view class="none-content">
+        <image src="../../icon/voucher.png"></image>
+        <text class="txt">暂无可用优惠券</text>
+    </view>
+</view>
+<view wx:else>
+<view class="wrapper" wx:for="{{checkList}}" bindtap="check" data-id="{{item.id}}" data-item="{{item}}">
+    <block wx:if="{{!item.ifUse}}">
+        <block wx:if="{{!item.style}}">
+            <view class="left">
+                <view class="rowT">
+                    <text class="leftTop">￥</text>
+                    <text class="leftMoney">{{item.money}}</text>
+                </view>
+                <text class="left-condition"> 满{{item.user_condition}}元使用</text>
+            </view>
+            <view class="right">
+                <view class="right-text">
+                    <text class="rightRequrie">{{item.title}}</text>
+                    <text class="rightTime">{{item.begin_time}}-{{item.end_time}}</text>
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="left1">
+                <view class="rowT1">
+                    <text class="leftTop1">￥</text>
+                    <text class="leftMoney1">{{item.money}}</text>
+                </view>
+                <text class="left-condition1"> 满{{item.user_condition}}元使用</text>
+            </view>
+            <view class="right1">
+                <view class="right-text1">
+                    <text class="rightRequrie1">{{item.title}}</text>
+                    <text class="rightTime1">{{item.begin_time}}-{{item.end_time}}</text>
+                </view>
+            </view>
+        </block>
+
+    </block>
+</view>
+<view class="bottom_view" bindtap="exit" style="position: fixed; bottom: 0; width: 100vw; height: 110rpx; background-color: var( --themeColor); display: flex; justify-content: center; align-items: center; z-index: 100;" >
+        <view class="button" style="margin-bottom: 10rpx;">
+            <text style="color: white;">确定</text>
+        </view>
+   </view>
+</view>

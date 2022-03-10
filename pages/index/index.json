@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "load":"../../components/load/load",
+    "i-rate": "../../dist/rate/index"
+
+  },
+  "navigationBarTitleText": "西荣智慧食堂"
+}

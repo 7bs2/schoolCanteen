@@ -1,0 +1,3 @@
+<view class="custom flex_center" style="padding-top:{{statusBarHeight}}px">
+  <text class="title">{{name}}</text>
+</view>

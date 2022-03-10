@@ -1,0 +1,24 @@
+<!-- 搜索框 -->
+<view class="seach_nav">
+  <view url="/pages/search/search" class="nav">
+    <image mode="widthFix" src="../../icon/search.png" class="image"></image>
+    <input type="text" placeholder="请输入菜名" bindinput="searchInput" style="font-family: var(--themeFont);"/>
+  </view>
+</view>
+
+<scroll-view wx:if="{{search_list.length != 0}}" class="item_list" scroll-y="true" style="margin-top: 15rpx; height: calc(100vh - 110rpx);">
+    <view class="item" wx:for="{{search_list}}" wx:key="{{goods_id}}">
+        <view class="shop_nav_item">
+            <image src="{{item.img_src}}" mode="scaleToFill"></image>
+             <view class="detail">
+                <text class="text_small">{{item.goods_name}} </text>
+                <text style=" font-size: 30rpx;color: #7a7878">￥{{item.price}}</text>
+                <text class="scoec">评分 {{item.score}}</text>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+
+<view wx:else style="margin-top: 15rpx; height: calc(100vh - 110rpx); display: flex; justify-content: center; align-items: center;">
+    <text style="color: #7a7878;">暂无结果</text>
+</view>

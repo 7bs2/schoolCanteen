@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-tag": "../../dist/tag/index",
+    "circular": "../../components/circular/circular",
+    "i-rate": "../../dist/rate/index"
+  },
+  "navigationStyle":"custom"
+}

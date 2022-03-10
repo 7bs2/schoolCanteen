@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "circular": "../../components/circular/circular"
+  },
+  "navigationBarTitleText": "食堂菜单"
+}

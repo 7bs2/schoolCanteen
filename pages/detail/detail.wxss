@@ -1,0 +1,51 @@
+.head {
+    position: relative;
+}
+.head .back {
+    position: fixed;
+    width: 40rpx;
+    left: 20rpx;
+    
+}
+.head .title_src{
+    width: 100vw;
+}
+.message {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+i-tag {
+    font-family: var(--themeFont);
+}
+.taps {
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+
+}
+.taps>i-tag:not(:first-child) {
+    margin-left: 20rpx;
+}
+.line {
+    height: 2px;
+    background-color: #ededed;
+}
+
+.bottom {
+    position: fixed;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 85vh;
+    background-color: white;
+}
+.active {
+    background-color: #f2f2f2;
+    font-weight: normal !important;
+}
+.bot {
+    background-color: #333333 !important;
+}

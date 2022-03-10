@@ -1,0 +1,91 @@
+<block wx:if="{{flag}}">
+    <circular></circular>
+</block>
+<block wx:else>
+    <scroll-view style="width: 100vw; height: 85vh;" scroll-y="true">
+    <view class="head">
+    <image class="back" src="../../icon/back.png" mode="widthFix"  bindtap="back" style="top: {{statusBarHeight}}px;"></image>
+    <image class="title_src" src="{{food.img_src}}" mode="widthFix"></image>
+</view>
+
+<view class="message">
+    <view class="title" style="font-weight: bold; letter-spacing: 3rpx;">
+        {{food.goods_name}}
+    </view>
+    <view class="taps">
+        <i-tag 
+    class="i-tags" 
+    name="标签一" 
+    color="yellow">
+    推荐
+</i-tag>
+<i-tag wx:for="{{danwei}}"
+    class="i-tags"
+    name="{{item}}" 
+    color="green">
+    {{item}}
+</i-tag>
+<i-tag wx:for="{{mingzui}}"
+    class="i-tags" 
+    name="{{item}}" 
+    color="red">
+    {{item}}忌
+</i-tag>
+        <i-rate 
+        style="margin-left: 20rpx;"
+            disabled="{{true}}"
+            value="4">
+        </i-rate>
+
+    </view>
+
+    <view style="text-indent:1em; margin-top: 20rpx;">
+        <p style="text-indent: 2em; overflow:hidden; font-size: 25rpx; line-height: 30rpx; color: #505050;font-family: var(--themeFont);">
+            所谓“质”包括菜肴的营养价值，利于消化的熟、嫩、脆、烂的火候程度，合乎杀菌消毒的卫生要求等。菜肴质感，是由视觉和触觉两种感受结合起来而产生的一种心理感受，诸如光滑、粗糙、细腻、软滑、爽滑、坚实、蓬松、干燥、滋润、弹脆、脆嫩、老韧、酥烂等等
+        </p>
+    </view>
+
+    <view class="line" style="margin-top: 10rpx;"></view>
+</view>
+
+<view class="select">
+    <view style="display: flex; flex-direction: row; align-items: center;padding-left: 30rpx; margin-top: 20rpx;">
+        <image src="../../icon/san.png" mode="widthFix" style="width: 30rpx;"></image>
+        <view style="color: #7e7e7e; font-family: var(--themeFont);">口味选择</view>
+    </view>
+
+    <view style=" display: flex; flex-direction: row;flex-wrap: wrap;justify-content: start;">
+        <view wx:for="{{kouwei}}" class="{{index == kouwei_id? 'active':''}}" style="font-family: var(--themeFont); width: 300rpx; margin-top: 20rpx;border: 2rpx solid #ebebeb; margin-left: 30rpx; font-weight: bold;" bindtap="select" data-index="{{index}}" data-mess="{{item}}">
+            {{item}}
+        </view>
+    </view>
+</view>
+
+<view style="height: 200rpx;">
+</view>
+</scroll-view>
+
+
+
+<view class="bottom">
+    <view style="display: flex; flex-direction: row; padding-left: 30rpx; position: relative; width: 100vw;">
+       <view style="font-size: 40rpx; font-weight: bold;">￥{{food.price}}</view>
+       <!-- 数量 -->
+       <view style="display: flex; flex-direction: row;justify-content: center;align-items: center; position: absolute; right: 10rpx;margin-right: 30rpx;">
+        <image src="../../icon/jian.png" mode="widthFix" style="width: 40rpx;" bindtap="jian"></image>
+        <view style="font-size: 40rpx; font-weight: bold; margin-left: 10rpx;">{{num}}</view>
+        <image src="../../icon/add.png" mode="widthFix" style="width: 40rpx; background-color: red; margin-left: 10rpx;" bindtap="jia"></image>
+       </view>
+
+
+    </view>
+
+    <view class="{{num > 0?'bot':''}}" style="width: 90vw; height: 80rpx; background-color: #777777; margin-top: 20rpx; display: flex; align-items: center;position: relative;" bindtap="confim">
+        <view  style="font-size: 35rpx; font-weight: bold; color: white;margin-left: 30rpx;" >加入购物车</view>
+        <image src="../../icon/right.png" mode="widthFix" style="width: 35rpx;position: absolute; right: 0;margin-right: 30rpx;"></image>
+    </view>
+</view>
+
+
+
+</block>

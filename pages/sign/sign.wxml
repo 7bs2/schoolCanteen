@@ -1,0 +1,17 @@
+<view class="contain" style="margin-top: 100rpx; margin-left: 70rpx; margin-right: 70rpx;">
+    <view class="phone_item" style="position: relative;">
+        <image src="../../icon/phone.png" mode="widthFix" style="width: 50rpx;"></image>
+        <input type="number" style="margin-left: 20rpx;" placeholder="请输入手机号"/>
+       <view style=" position: absolute; right: 0; font-family: FangSong;  color: #adadad;">获取验证码</view>
+    </view>
+
+    <view class="line" style="width: 100%; height: 2rpx;  background-color: #e6e6e6; margin-top: 25rpx;"></view>
+    <view class="passward_item" style="margin-top: 50rpx;">
+        <image src="../../icon/passward.png" mode="widthFix" style="width: 50rpx;"></image>
+        <input type="number" style="margin-left: 20rpx;" placeholder="请输入验证码"/>
+       
+    </view>
+    <view class="line" style="width: 100%; height: 2rpx;  background-color: #e6e6e6; margin-top: 25rpx;"></view>
+
+    <view class="button" style="height: 85rpx; background-color: #e6e6e6; border-radius: 5rpx; margin-top: 25rpx;">登录</view>
+</view>

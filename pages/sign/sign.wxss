@@ -1,0 +1,17 @@
+.phone_item {
+    display: flex;
+    flex-direction: row;
+}
+
+.passward_item {
+    display: flex;
+    flex-direction: row;
+} 
+
+.button {
+    display: flex;
+    line-height: 85rpx;
+    justify-content: center;
+    font-family: var(--themeFont);
+    color: #adadad;
+}

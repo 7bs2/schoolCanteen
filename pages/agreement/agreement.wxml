@@ -1,0 +1,3 @@
+<!--pages/agreement/agreement.wxml-->
+
+<web-view src="http://61.189.160.73:50080/UserAgreement.aspx"></web-view>
